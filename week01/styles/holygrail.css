@@ -7,6 +7,7 @@
     grid-template-columns: 1fr auto;
     grid-template-rows: auto auto 1fr auto;
   }
+  hatchpath
   
   header {
     background: lightpink;
