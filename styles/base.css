@@ -1,0 +1,158 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+
+/* General Mobile Styles */
+body {
+    font-family: "Playpen Sans", cursive;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+/* HEADER */
+header {
+    color: white;
+    text-align: center;
+    background-color: #1E4966;
+    padding: 1rem 0;
+}
+
+header .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header .profile img {
+    border-radius: 10px;
+    width: 90px;
+    height: 90px;
+    margin-bottom: 0.5rem;
+}
+
+header h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+/* NAVIGATION */
+nav {
+    background-color: black;
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    padding: 10px 0;
+}
+
+nav a {
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+nav a.active {
+    font-weight: bold;
+    background-color: brown;
+    padding: 15px;
+}
+
+/* MAIN CONTENT */
+main {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+/* SECTION STYLING */
+section {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+section h2 {
+    text-align: center;
+    background-color: #1E4966;
+    color: white;
+    border-radius: 6px;
+    padding: 12px;
+    font-size: 18px;
+    margin: -1rem -1rem 1rem -1rem;
+}
+
+/* LINKS */
+a {
+    color: #1E4966;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+    background-color: #1E4966;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 14px;
+}
+
+footer br {
+    display: none;
+}
+
+/* FOOTER TEXT */
+footer .name {
+    font-weight: bold;
+}
+
+footer .flag {
+    height: 30px;
+    width: 50px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+/* ICONS */
+footer .icon {
+    font-size: 12px;
+    margin: 0 5px;
+    color: pink;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 18px;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    section h2 {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
