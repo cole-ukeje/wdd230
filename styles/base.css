@@ -1,6 +1,4 @@
-/* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
-
 
 /* General Mobile Styles */
 body {
@@ -47,10 +45,14 @@ nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
+/* Menu items for larger screens */
 nav li {
-    padding: 10px 0;
+    padding: 10px 20px;
 }
 
 nav a {
@@ -64,6 +66,109 @@ nav a.active {
     font-weight: bold;
     background-color: brown;
     padding: 15px;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212;
+    color: #f4f4f9;
+}
+
+body.dark-mode header {
+    background-color: #333;
+}
+
+body.dark-mode nav {
+    background-color: #222;
+}
+
+body.dark-mode nav a {
+    color: #f4f4f9;
+}
+
+body.dark-mode li {
+    color: black;
+}
+
+body.dark-mode p {
+    color: #121212;
+}
+
+body.dark-mode footer p {
+    color: white;
+}
+
+body.dark-mode nav a:hover {
+    background-color: #444;
+}
+
+body.dark-mode footer {
+    background-color: #333;
+}
+
+body.dark-mode .menu-icon {
+    background-color: #f4f4f9;
+}
+
+/* Dark Mode Button */
+.dark-mode-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #1E4966;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .dark-mode-btn {
+    color: #f4f4f9;
+}
+
+/* On mobile, hide the menu items */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide menu items on mobile */
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    
+    #menu-toggle {
+        display: block; /* Show the hamburger icon on mobile */
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        position: relative;
+    }
+
+    .menu-icon {
+        width: 25px;
+        height: 2px;
+        background-color: white;
+        display: block;
+        margin: 5px 0;
+        transition: all 0.3s ease;
+    }
+
+    #menu-toggle.open .menu-icon:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    #menu-toggle.open .menu-icon:nth-child(2) {
+        opacity: 0;
+    }
+
+    #menu-toggle.open .menu-icon:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    nav.open ul {
+        display: flex; /* Show menu items when hamburger is clicked */
+    }
 }
 
 /* MAIN CONTENT */
