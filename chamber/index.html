@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lagos Chamber of Commerce Home Page</title>
+    <meta name="author" content="Chinemerem Ofozie Ukeje">
+    <meta name="description"
+        content="Welcome to the Lagos City Chamber of Commerce. Find information on local events, business resources, and networking opportunities.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Lagos City Chamber of Commerce">
+    <meta property="og:url" content="https://lagoschamber.com/">
+    <meta property="og:image" content="https://www.lagoschamber.com/">
+    <meta property="og:description"
+        content="Discover local businesses and services with the Lagos City Chamber of Commerce directory.">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@500&display=swap" rel="stylesheet">
+
+
+    <!-- Normalize CSS (Reset CSS) -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <script src="scripts/index.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/commerce-site-logo.png" alt="Website Logo">
+                <h1>Lagos Chamber of Commerce</h1>
+            </div>
+            <button id="menu-toggle" aria-label="Toggle navigation">
+                <span class="menu-icon"></span>
+                <span class="menu-icon"></span>
+                <span class="menu-icon"></span>
+            </button>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="https://cole-ukeje.github.io/wdd230/chamber/index.html">Home</a></li>
+                    <li><a href="#">Directory</a></li>
+                    <li><a href="#">Join</a></li>
+                    <li><a href="#">Discover</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="hero">
+            <img src="images/lagos-hero.jpg" alt="City">
+            <button class="cta">Join The Chamber</button>
+        </div>
+
+        <section class="main-contents">
+            <section class="events">
+                <h3>Events</h3>
+                <p>Details about current events go here...</p>
+            </section>
+            <section class="weather" id="weather">
+                <h3>Weather Forecast</h3>
+                <h4>Cloudy ☁</h4>
+            </section>
+            <section class="current-weather" id="current-weather">
+                <h3>Current Weather</h3>
+                <p id="current-temp">Temperature: Loading...</p>
+                <p id="current-condition">Condition: Loading...</p>
+            </section>
+        </section>
+        <section class="spotlight">
+            <article class="card">
+                <img src="images/xpertech.png" alt="Xpertech Solutions Group">
+                <h2>Xpertech Solutions Group</h2>
+                <p><strong>Address:</strong> 61 Idimu Road Lagos 100275, Nigeria</p>
+                <p><strong>Phone:</strong> +2348032882047</p>
+                <p><strong>URL:</strong> <a href="https://xpertechsolutionsltd.com" target="_blank">https://xpertechsolutionsltd.com</a></p>
+            </article>
+    
+            <article class="card">
+                <img src="images/unshoppen.png" alt="Ushoppen">
+                <h2>Ushoppen</h2>
+                <p><strong>Address:</strong> Lekki Lagos 110011 Nigeria</p>
+                <p><strong>Phone:</strong> +2348054396345</p>
+                <p><strong>URL:</strong> <a href="https://ushoppen.com" target="_blank">https://ushoppen.com</a></p>
+            </article>
+    
+            <article class="card">
+                <img src="images/bitswift.png" alt="Bitswift Tech Nigeria">
+                <h2>Bitswift Tech Nigeria</h2>
+                <p><strong>Address:</strong> 552, Ikorodu Road, Ketu, Kosofe Lagos 105102</p>
+                <p><strong>Phone:</strong> +2348100844637</p>
+                <p><strong>URL:</strong> <a href="https://bitswift.ng" target="_blank">https://bitswift.ng</a></p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <h2>Laagos Chamber of Commerce</h2>
+                <address>
+                    21 Olayinka Balogun street<br>
+                    Ijegun, Lagos<br>
+                    <a href="mailto:lagoschamber.com">info@lagoschamber.com</a><br>
+                    <a href="tel:+2349138665096">(234) 913-866-5096</a>
+                </address>
+            </div>
+            <div class="footer-social">
+                <a href="www.youtube.com"><img src="images/youtube.jpg" alt="YouTube"></a>
+                <a href="www.twitter.com"><img src="images/x-image.png" alt="Twitter"></a>
+                <a href="www.indeed.com"><img src="images/indeed.png" alt="Indeed"></a>
+            </div>
+            <div class="footer-credit">
+                <p>WDD230 Class Project</p>
+                <p>Chinemerem Ofozie Ukeje</p>
+                <p>© <span id="currentYear"></span> Lagos Chamber of Commerce</p>
+                <p id="lastModified"> Last Update: </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+/* Responsive Menu for Smaller Screens */
+@media (max-width: 767px) {
+    header .container {
+        flex-direction: column;
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        padding: 15px 0px;
+    }
+
+    nav ul {
+        display: list-item;
+        width: 100%;
+        justify-content: center;
+        padding: 20%;
+    }
+
+    nav a {
+        font-size: 8px;
+        color: white;
+    }
+
+    nav a:hover {
+        background-color: #1E4966;
+        color: white;
+        padding: 8px;
+        border-radius: 6px;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    .main-contents {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .events,
+    .weather,
+    .current-weather {
+        margin: 10px 0;
+    }
+
+    .card {
+        flex-direction: column;
+        text-align: center;
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .card img {
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+
+    .spotlight {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-info,
+    .footer-credit,
+    .footer-social {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .footer-credit p {
+        margin: 2px 0;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+}
+
+/* Styles for the business cards
+.bussiness-spotlight {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: #1b1f23;
+} */
+
+/* For mobile screens (max-width 480px) */
+@media (max-width: 480px) {
+    .hero img {
+        max-height: 300px;
+    }
+
+    .cta {
+        font-size: 0.9em;
+        padding: 7px 14px;
+    }
+
+    .main-contents {
+        padding: 5px;
+    }
+
+    .card {
+        padding: 10px;
+    }
+
+    .card img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .bussiness-spotlight {
+        padding: 0;
+    }
+}
