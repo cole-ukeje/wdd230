@@ -30,7 +30,7 @@
 <body>
     <header>
         <div class="profile">
-            <img id="myImage1" src="images/sheddy1.jpg" alt="Picture of myself">
+            <img id="myImage1" src="images/sheddy1.webp" alt="Picture of myself">
             <h1>Chinemerem O. Ukeje</h1>
         </div>
         <nav>
@@ -51,6 +51,16 @@
     <h2>WDD230: Web Frontend Development</h2>
     <hr>
     <main>
+        <!-- Hero Image -->
+        <div class="hero">
+            <picture>
+                <source srcset="images/aba-nigeria-large.webp" media="(min-width: 640px)">
+                <img src="images/aba-nigeria-temple-small.webp" alt="Latter-day Temple" width="100%" loading="lazy">
+            </picture>
+            <div class="hero-overlay">
+                <p>Aba Nigeria Temple</p>
+            </div>
+        </div>
         <section id="course-work">
             <h2>Learning Activities</h2>
             <ul>
@@ -66,12 +76,16 @@
             <h2>Information</h2>
             <p>Location: Lagos, Nigeria</p>
             <p>🌞 76°F - Sunshine</p>
-            <p>Page Visits: 15</p>
+            <!-- <p>Page Visits: </p> -->
         </section>
+        <!-- Google Map -->
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1981.9660236640689!2d3.289486139948581!3d6.5302668000000175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sng!4v1742341767026!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
     </main>
         <footer>
             <p>&copy; <span id="currentyear"></span><br> 🌺 Chinemerem Ofozie Ukeje <br> 🌺 Nigeria <img
-                    src="images/nigeria-flag1.png" alt="Nigeria Flag" class="flag"></p>
+                    src="images/nigeria-flag1.webp" alt="Nigeria Flag" class="flag"></p>
             <p id="lastModified"> Last Update: </p>
         </footer>
     <script src="scripts/getDates.js"></script>  
