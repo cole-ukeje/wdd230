@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="WDD 230 - Web Frontend Development | Chinemerem Ofozie Ukeje | Form Assignment">
+    <meta name="author" content="Chinemerem Ofozie Ukeje">
+    <title>Chinemerem O. Ukeje - WDD 230 - Web Frontend Development</title>
+
+    <!-- Fave Icon link -->
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Font: Playpen Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/form.css">
+
+    <!-- Open Graph meta properties -->
+    <meta property="og:title" content="Form Assignment">
+    <meta property="og:type" content="website">
+    <meta property="og:image"
+        content="https://borgenproject.org/wp-content/uploads/Urbanization-and-Its-Impact-on-Poverty-in-Lagos-Nigeria--845x684.jpg">
+    <meta property="og:url" content="https://cole-ukeje.github.io/wdd230/">
+</head>
+<body>
+    <header>
+        <h1>Team Activity Form</h1>
+    </header>
+
+    <main>
+        <form method="get" action="record.html">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input 
+                    type="text" 
+                    id="username" 
+                    name="username" 
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    required
+                    pattern="^[a-zA-Z0-9]{8,}$"
+                    minlength="8"
+                    title="Password must be 8 characters and can only be alpa numeric"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input 
+                    type="password" 
+                    id="confirm-password" 
+                    name="confirm-password" 
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    required
+                    pattern="[a-zA-Z0-9._%+\-]+@byui\.edu"
+                    title="Please enter a valid BYU-Idaho email address"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="page-rating">Page Rating: <span>5</span></label>
+                <input 
+                    type="range" 
+                    id="page-rating" 
+                    name="page-rating" 
+                    min="1" 
+                    max="10" 
+                    step="1" 
+                    value="5"
+                >
+            </div>
+
+            <div class="form-group">
+                <button type="submit">Submit Form</button>
+            </div>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2025 <br> 🌺 Chinemerem Ofozie Ukeje <br> 🌺 Nigeria 
+    </footer>  
+</body>
+</html>
