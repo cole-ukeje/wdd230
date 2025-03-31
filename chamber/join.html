@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lagos Chamber of Commerce Home Page</title>
+    <meta name="author" content="Chinemerem Ofozie Ukeje">
+    <meta name="description"
+        content="Welcome to the Lagos City Chamber of Commerce. Find information on local events, business resources, and networking opportunities.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Lagos City Chamber of Commerce">
+    <meta property="og:url" content="https://lagoschamber.com/">
+    <meta property="og:image" content="https://www.lagoschamber.com/">
+    <meta property="og:description"
+        content="Discover local businesses and services with the Lagos City Chamber of Commerce directory.">
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@500&display=swap" rel="stylesheet">
+
+
+    <!-- Normalize CSS (Reset CSS) -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/larger.css">
+    <link rel="stylesheet" href="styles/join.css">
+    <script src="scripts/index.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/commerce-site-logo.png" alt="Website Logo">
+                <h1>Lagos Chamber of Commerce</h1>
+            </div>
+            <button id="menu-toggle" aria-label="Toggle navigation">
+                <span class="menu-icon"></span>
+                <span class="menu-icon"></span>
+                <span class="menu-icon"></span>
+            </button>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="https://cole-ukeje.github.io/wdd230/chamber/index.html">Home</a></li>
+                    <li><a href="#">Directory</a></li>
+                    <li><a href="https://cole-ukeje.github.io/wdd230/chamber/join.html">Join</a></li>
+                    <li><a href="https://cole-ukeje.github.io/wdd230/chamber/discover.html">Discover</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="main-container">
+            <!-- Application Form -->
+            <form action="thankyou.html" method="get">
+                <h2>Membershipp Application Form</h2>
+
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" title="First Name" required
+                    autocomplete="given-name">
+
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" title="Last Name" required autocomplete="family-name">
+
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="organization-title" title="Organization Title"
+                    autocomplete="organization-title" pattern="[A-Za-z\s-]{7,}">
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" title="Email Address" required autocomplete="email"
+                    placeholder="example@gmail.com">
+
+                <label for="phone">Mobile Number:</label>
+                <input type="tel" id="phone" name="mobile" title="Mobile Phone" required autocomplete="tel">
+
+                <label for="organization">Organization Name:</label>
+                <input type="text" id="organization" name="organization" title="Organization Name" required
+                    autocomplete="organization">
+
+                <label for="membership">Select Membership Level:</label>
+                <select id="membership" name="membership" title="Membership Level">
+                    <option value=" " disabled selected>Select</option>
+                    <option value="non-profit">Non Profit Membership</option>
+                    <option value="bronze">Bronze Membership</option>
+                    <option value="silver">Silver Membership</option>
+                    <option value="gold">Gold Membership</option>
+                </select>
+
+                <label for="description">Organization Description:</label>
+                <textarea id="description" name="description" title="Organization Description"></textarea>
+
+                <input type="hidden" id="timestamp" name="timestamp" value="">
+
+                <input type="submit" value="Submit" class="submit-btn">
+            </form>
+            <!-- Membership Levels Cards -->
+            <div class="membership-levels">
+                <h2>Membership Levels</h2>
+
+                <div class="membership-card" id="nonprofit">
+                    <h3>Non Profit Membership Level</h3>
+                    <button onclick="openModal('modalNonProfit')">Learn More</button>
+                </div>
+
+                <div class="membership-card" id="bronze">
+                    <h3>Bronze Membership Level</h3>
+                    <button onclick="openModal('modalBronze')">Learn More</button>
+                </div>
+
+                <div class="membership-card" id="silver">
+                    <h3>Silver Membership Level</h3>
+                    <button onclick="openModal('modalSilver')">Learn More</button>
+                </div>
+
+                <div class="membership-card" id="gold">
+                    <h3>Gold Membership Level</h3>
+                    <button onclick="openModal('modalGold')">Learn More</button>
+                </div>
+            </div>
+        </div>
+        <!-- Modals for Membership Levels -->
+        <div id="modalNonProfit" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modalNonProfit')">&times;</span>
+                <h3>Non Profit Membership Level</h3>
+                <p>This membership is only for non profit organizations, they do not need to pay for a membership.</p>
+            </div>
+        </div>
+
+        <div id="modalBronze" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modalBronze')">&times;</span>
+                <h3>Bronze Membership Level</h3>
+                <p>This memebership is perfect for small business. Join to Bronze membership only width $150 and be
+                    visible in chamber website, discount in events and access to our work spaces.</p>
+            </div>
+        </div>
+
+        <div id="modalSilver" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modalSilver')">&times;</span>
+                <h3>Silver Membership Level</h3>
+                <p>Increase your connections and accelerate your growth. Silver membership has a fee of $230, you can
+                    have the bronze benefits and access to the contact list of the chamber, advocacy consultant, access
+                    to matter experts.</p>
+            </div>
+        </div>
+
+        <div id="modalGold" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('modalGold')">&times;</span>
+                <h3>Gold Membership Level</h3>
+                <p>Get the better investor and demonstrate your leadership. Gold membership has a fee of $340, you can
+                    get all the Silver benefits and unlimited access to the board room, 3 participations of another CEO
+                    on roundtables and recognition on the main screen of our cowork.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-info">
+                <h2>Laagos Chamber of Commerce</h2>
+                <address>
+                    21 Olayinka Balogun street<br>
+                    Ijegun, Lagos<br>
+                    <a href="mailto:lagoschamber.com">info@lagoschamber.com</a><br>
+                    <a href="tel:+2349138665096">(234) 913-866-5096</a>
+                </address>
+            </div>
+            <div class="footer-social">
+                <a href="www.youtube.com"><img src="images/youtube.jpg" alt="YouTube"></a>
+                <a href="www.twitter.com"><img src="images/x-image.png" alt="Twitter"></a>
+                <a href="www.indeed.com"><img src="images/indeed.png" alt="Indeed"></a>
+            </div>
+            <div class="footer-credit">
+                <p>WDD230 Class Project</p>
+                <p>Chinemerem Ofozie Ukeje</p>
+                <p>© <span id="currentYear"></span> Lagos Chamber of Commerce</p>
+                <p id="lastModified"> Last Update: </p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
