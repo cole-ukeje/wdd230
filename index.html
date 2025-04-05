@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/base.css">
     <link rel="stylesheet" href="styles/larger.css">
+    <script src="scripts/weather.js"></script>
 
     <!-- Open Graph meta properties -->
     <meta property="og:title" content="Course Home Page">
@@ -64,19 +65,15 @@
         <section id="course-work">
             <h2>Learning Activities</h2>
             <ul>
-                <li>Week 01: <a href="#">Layout</a> | <a href="#">Media Query</a> | <a href="#">JS Pen</a></li>
-                <li>Week 02: <a href="week02/design.html">Design Activity</a> | <a href="week02/bom.html">BOM Activity</a> |</li>
-                <li>Week 03: <a href="week03/images/landscape1.webp">Webp</a> | <a href="week03/lazyload.html">Lazy Load Activity</a></li>
-                <li>Week 04: <a href="#">CodePen</a> | <a href="week04/images/w3schools-exercise.png">W3Schoold Exercise</a> | <a href="week04/tablebuild.html">Table Build Activity</a></li>
-                <li>Week 05:</li>
-                <li>Week 06:</li>
+                <div id="links-container"></div>
             </ul>
         </section>
         <section id="location">
             <h2>Information</h2>
-            <p>Location: Lagos, Nigeria</p>
-            <p>🌞 76°F - Sunshine</p>
-            <!-- <p>Page Visits: </p> -->
+            <div id="weather-card">
+              <p id="weather-info">Loading weather...</p>
+              <p id="visit-count">Page Visits: 0</p>
+            </div>
         </section>
         <!-- Google Map -->
         <div class="map-container">

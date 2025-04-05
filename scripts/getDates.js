@@ -31,19 +31,11 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function updateVisitCounter() {
-    // Check if this is the first visit
     let visits = Number(localStorage.getItem('visits')) || 0;
-    
-    // Increment the visit count
     visits++;
-    
-    // Store the new visit count
     localStorage.setItem('visits', visits);
-    
-    // Update the visit count display
-    document.querySelector('#location p:nth-of-type(2)').textContent = `Page Visits: ${visits}`;
+    document.getElementById('visit-count').textContent = `Visit Count: ${visits}`;
 }
-
 // Call the function when the page loads
 updateVisitCounter();
 

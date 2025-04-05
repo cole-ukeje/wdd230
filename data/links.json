@@ -1,0 +1,73 @@
+{
+    "weeks": [
+      {
+        "week": "Week 1",
+        "links": [
+          {
+            "url": "#",
+            "title": "Layout"
+          },
+          {
+            "url": "#",
+            "title": "Media Query"
+          },
+          {
+            "url": "#",
+            "title": "JS Pen"
+          }
+        ]
+      },
+      {
+        "week": "Week 2",
+        "links": [
+          {
+            "url": "week02/design.html",
+            "title": "Design Activity"
+          },
+          {
+            "url": "week02/bom.html",
+            "title": "BOM Activity"
+          }
+        ]
+      },
+      {
+        "week": "Week 3",
+        "links": [
+          {
+            "url": "week03/images/landscape1.webp",
+            "title": "WebP"
+          },
+          {
+            "url": "week03/lazyload.html",
+            "title": "Lazy Load Activity"
+          }
+        ]
+      },
+      {
+        "week": "Week 4",
+        "links": [
+          {
+            "url": "#",
+            "title": "CodePen"
+          },
+          {
+            "url": "week04/images/w3schools-exercise.png",
+            "title": "W3Schools Exercise"
+          },
+          {
+            "url": "week04/tablebuild.html",
+            "title": "Table build activity"
+          }
+        ]
+      },
+      {
+        "week": "Week 5",
+        "links": [
+          {
+            "url": "#",
+            "title": "CodePen"
+          }
+        ]
+      }
+    ]
+  }
