@@ -1,0 +1,60 @@
+{
+    "members": [
+        {
+            "name": "Xpertech Solutions Group",
+            "address": "61 Idimu Road Lagos 100275 Nigeria",
+            "phoneNumber": "+2348032882047",
+            "websiteUrl": "https://xpertechsolutionsltd.com",
+            "imageFileName": "images/xpertech.png",
+            "membershipLevel": 3
+        },
+        {
+            "name": "Lyon Cyber System",
+            "address": "15 adegbuyi merciland hospital ijegun Lagos 102213",
+            "phoneNumber": "+2349039489520",
+            "websiteUrl": "https://linktr.ee/lyoncybersystem?lt_utm_source=lt_admin_share_link#387712357",
+            "imageFileName": "images/lyon.png",
+            "membershipLevel": 2
+        },
+        {
+            "name": "Odichi Solutions",
+            "address": "Local Government Area, 3rd Floor, Tower C, Churchgate Plaza AO Cadastral Zone, Lagos 900211",
+            "phoneNumber": "+2347000611099",
+            "websiteUrl": "https://odichisolutions.com",
+            "imageFileName": "images/odichi.png",
+            "membershipLevel": 2
+        },
+        {
+            "name": "Ushoppen",
+            "address": "Lekki Lagos 110011 Nigeria",
+            "phoneNumber": "+2348054396345",
+            "websiteUrl": "https://ushoppen.com",
+            "imageFileName": "images/unshoppen.png",
+            "membershipLevel": 3
+        },
+        {
+            "name": "Weevil Company",
+            "address": "15A Tiramiyu Bello Osagie Street, Parkview Ikoyi Lagos 101233",
+            "phoneNumber": "+2349010100111",
+            "websiteUrl": "https://weevilcompany.com",
+            "imageFileName": "images/weevil.png",
+            "membershipLevel": 1
+        },
+        {
+            "name": "Tanta Innovative",
+            "address": "39 Ladipo Kasumu Street Lagos 100281",
+            "phoneNumber": "+23414536000",
+            "websiteUrl": "https://tantainnovative.com",
+            "imageFileName": "images/tanta.jpg",
+            "membershipLevel": 2
+        },
+        {
+            "name": "Bitswift Tech Nigeria",
+            "address": "552, Ikorodu Road, Ketu, Kosofe Lagos 105102",
+            "phoneNumber": "+2348100844637",
+            "websiteUrl": "https://bitswift.ng",
+            "imageFileName": "images/bitswift.png",
+            "membershipLevel": 3
+        }
+    ]
+}

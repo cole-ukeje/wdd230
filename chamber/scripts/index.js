@@ -202,3 +202,52 @@ window.onclick = function (event) {
         }
     });
 }
+
+
+// directory cards
+document.addEventListener('DOMContentLoaded', fetchMembers);
+
+async function fetchMembers() {
+    try {
+        const response = await fetch('data/members.json');
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        const data = await response.json();
+        displayMembers(data.members);
+    } catch (error) {
+        console.error('Error fetching the member data:', error);
+    }
+}
+
+function displayMembers(members) {
+    const memberContainer = document.getElementById('member-container');
+    memberContainer.innerHTML = '';
+
+    members.forEach(member => {
+        const memberCard = document.createElement('div');
+        memberCard.className = 'member-card';
+        memberCard.innerHTML = `
+            <img src="${member.imageFileName}" alt="${member.name}">
+            <h3>${member.name}</h3>
+            <p>${member.address}</p>
+            <p>${member.phoneNumber}</p>
+            <a href="${member.websiteUrl}" target="_blank">${member.websiteUrl}</a>
+        `;
+        memberContainer.appendChild(memberCard);
+    });
+}
+
+document.getElementById('grid').addEventListener('click', () => toggleView('grid'));
+document.getElementById('list').addEventListener('click', () => toggleView('list'));
+
+function toggleView(view) {
+    const memberContainer = document.getElementById('member-container');
+    if (view === 'grid') {
+        memberContainer.classList.remove('list-view');
+        memberContainer.classList.add('grid-view');
+    } else {
+        memberContainer.classList.remove('grid-view');
+        memberContainer.classList.add('list-view');
+    }
+}
