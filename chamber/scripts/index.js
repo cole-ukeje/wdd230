@@ -1,30 +1,33 @@
-//hamburger function
+// Hamburger function
 const menuToggle = document.getElementById('menu-toggle');
 const nav = document.querySelector('nav');
 
-menuToggle.addEventListener('click', function () {
-    menuToggle.classList.toggle('open');
-    nav.classList.toggle('show');
-});
-
+if (menuToggle && nav) {
+    menuToggle.addEventListener('click', function () {
+        menuToggle.classList.toggle('open');
+        nav.classList.toggle('show');
+    });
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const banner = document.getElementById('banner');
     const closeBtn = document.querySelector('.close-banner');
 
-    const today = new Date().getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+    if (banner && closeBtn) {
+        const today = new Date().getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
 
-    // Show banner on Mon (1), Tue (2), or Wed (3)
-    if (today >= 1 && today <= 3) {
-        banner.classList.remove('hidden');
+        // Show banner on Mon (1), Tue (2), or Wed (3)
+        if (today >= 1 && today <= 3) {
+            banner.classList.remove('hidden');
+        }
+
+        closeBtn.addEventListener('click', () => {
+            banner.classList.add('hidden');
+        });
     }
-
-    closeBtn.addEventListener('click', () => {
-        banner.classList.add('hidden');
-    });
 });
 
-// weather function
+// Weather function
 // API Key and URLs
 const apiKey = '0a7d947a4641774bc9562c026c366437';
 const city = 'Lagos';
@@ -34,6 +37,13 @@ const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&
 // Fetch current weather data
 async function fetchWeather() {
     try {
+        const currentTempElement = document.getElementById('current-temp');
+        const currentConditionElement = document.getElementById('current-condition');
+        
+        if (!currentTempElement || !currentConditionElement) {
+            return; // Exit if elements don't exist on this page
+        }
+        
         const weatherResponse = await fetch(weatherUrl);
         const weatherData = await weatherResponse.json();
 
@@ -41,8 +51,8 @@ async function fetchWeather() {
         const currentCondition = weatherData.weather[0].description;
 
         // Update the current weather elements
-        document.getElementById('current-temp').innerText = `Temperature: ${currentTemp} °C`;
-        document.getElementById('current-condition').innerText = `Condition: ${currentCondition}`;
+        currentTempElement.innerText = `Temperature: ${currentTemp} °C`;
+        currentConditionElement.innerText = `Condition: ${currentCondition}`;
 
         // Fetch the weather forecast data
         fetchForecast();
@@ -54,10 +64,15 @@ async function fetchWeather() {
 // Fetch forecast data
 async function fetchForecast() {
     try {
+        const forecastList = document.getElementById('forecast');
+        
+        if (!forecastList) {
+            return; // Exit if element doesn't exist
+        }
+        
         const forecastResponse = await fetch(forecastUrl);
         const forecastData = await forecastResponse.json();
 
-        const forecastList = document.getElementById('forecast');
         forecastList.innerHTML = ''; // Clear previous data
 
         // Extract forecast for the next 3 days (every 8th entry represents 24 hours)
@@ -76,17 +91,25 @@ async function fetchForecast() {
 }
 
 // Call the function to display weather data when the page loads
-fetchWeather();
+document.addEventListener('DOMContentLoaded', function() {
+    if (document.getElementById('current-temp') && document.getElementById('forecast')) {
+        fetchWeather();
+    }
+});
 
-
-   // localStorage visit tracker
-   function displayVisitMessage() {
+// localStorage visit tracker
+function displayVisitMessage() {
+    const visitsElement = document.getElementById('visits');
+    
+    if (!visitsElement) {
+        return; // Exit if element doesn't exist
+    }
+    
     // Get current timestamp
     const currentDate = Date.now();
     
     // Get stored date from localStorage, if it exists
     const lastVisit = localStorage.getItem('lastVisit');
-    const visitsElement = document.getElementById('visits');
     
     if (!lastVisit) {
         // First visit
@@ -117,16 +140,22 @@ document.addEventListener('DOMContentLoaded', function() {
     displayVisitMessage();
 });
 
-
-// footer date information
-let currentDate = new Date();
-let currentYear = currentDate.getFullYear();
-let currentYearElement = document.getElementById("currentYear");
-currentYearElement.textContent = currentYear;
-
-let date = document.lastModified;
-document.getElementById("lastModified").innerHTML = "Last modified: " + date;
-
+// Footer date information
+document.addEventListener('DOMContentLoaded', function() {
+    const currentYearElement = document.getElementById("currentYear");
+    const lastModifiedElement = document.getElementById("lastModified");
+    
+    if (currentYearElement) {
+        let currentDate = new Date();
+        let currentYear = currentDate.getFullYear();
+        currentYearElement.textContent = currentYear;
+    }
+    
+    if (lastModifiedElement) {
+        let date = document.lastModified;
+        lastModifiedElement.innerHTML = "Last modified: " + date;
+    }
+});
 
 // Calendar functionality script
 document.addEventListener('DOMContentLoaded', function() {
@@ -139,6 +168,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const monthList = document.querySelector('.month-list');
     const timeFormate = document.querySelector('.time-formate');
     const dateFormate = document.querySelector('.date-formate');
+    
+    // Check if calendar elements exist on this page
+    if (!monthPicker || !yearEl || !calendarDays) {
+        return; // Exit if calendar is not on this page
+    }
     
     // Month names array
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -188,6 +222,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to update date and time
     function updateDateTime() {
+        if (!timeFormate || !dateFormate) return;
+        
         const now = new Date();
         
         // Update time (HH:MM:SS format)
@@ -205,6 +241,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Generate month list for the dropdown
     function generateMonthList() {
+        if (!monthList) return;
+        
         monthList.innerHTML = '';
         
         months.forEach((month, index) => {
@@ -223,22 +261,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Event listener for month picker
-    monthPicker.addEventListener('click', () => {
-        monthList.classList.toggle('show');
-    });
+    if (monthPicker && monthList) {
+        monthPicker.addEventListener('click', () => {
+            monthList.classList.toggle('show');
+        });
+    }
     
     // Event listeners for year navigation
-    preYear.addEventListener('click', () => {
-        currentYear--;
-        yearEl.textContent = currentYear;
-        updateCalendar();
-    });
+    if (preYear) {
+        preYear.addEventListener('click', () => {
+            currentYear--;
+            yearEl.textContent = currentYear;
+            updateCalendar();
+        });
+    }
     
-    nextYear.addEventListener('click', () => {
-        currentYear++;
-        yearEl.textContent = currentYear;
-        updateCalendar();
-    });
+    if (nextYear) {
+        nextYear.addEventListener('click', () => {
+            currentYear++;
+            yearEl.textContent = currentYear;
+            updateCalendar();
+        });
+    }
     
     // Initialize the calendar
     generateMonthList();
@@ -246,26 +290,37 @@ document.addEventListener('DOMContentLoaded', function() {
     updateDateTime();
     
     // Update time every second
-    setInterval(updateDateTime, 1000);
+    if (timeFormate || dateFormate) {
+        setInterval(updateDateTime, 1000);
+    }
 });
 
 // Timestamp value
-window.onload = function () {
-    document.getElementById("timestamp").value = new Date().toLocaleString();
+window.onload = function() {
+    const timestampElement = document.getElementById("timestamp");
+    if (timestampElement) {
+        timestampElement.value = new Date().toLocaleString();
+    }
 };
 
 // Open Modal
 function openModal(modalId) {
-    document.getElementById(modalId).style.display = "block";
+    const modalElement = document.getElementById(modalId);
+    if (modalElement) {
+        modalElement.style.display = "block";
+    }
 }
 
 // Close Modal
 function closeModal(modalId) {
-    document.getElementById(modalId).style.display = "none";
+    const modalElement = document.getElementById(modalId);
+    if (modalElement) {
+        modalElement.style.display = "none";
+    }
 }
 
 // Close modal when clicking outside
-window.onclick = function (event) {
+window.onclick = function(event) {
     const modals = document.querySelectorAll('.modal');
     modals.forEach(modal => {
         if (event.target === modal) {
@@ -274,12 +329,19 @@ window.onclick = function (event) {
     });
 }
 
-
-// directory cards
-document.addEventListener('DOMContentLoaded', fetchMembers);
+// Directory cards
+document.addEventListener('DOMContentLoaded', function() {
+    const memberContainer = document.getElementById('member-container');
+    if (memberContainer) {
+        fetchMembers();
+    }
+});
 
 async function fetchMembers() {
     try {
+        const memberContainer = document.getElementById('member-container');
+        if (!memberContainer) return;
+        
         const response = await fetch('data/members.json');
         if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
@@ -293,6 +355,8 @@ async function fetchMembers() {
 
 function displayMembers(members) {
     const memberContainer = document.getElementById('member-container');
+    if (!memberContainer) return;
+    
     memberContainer.innerHTML = '';
 
     members.forEach(member => {
@@ -309,11 +373,23 @@ function displayMembers(members) {
     });
 }
 
-document.getElementById('grid').addEventListener('click', () => toggleView('grid'));
-document.getElementById('list').addEventListener('click', () => toggleView('list'));
+document.addEventListener('DOMContentLoaded', function() {
+    const gridButton = document.getElementById('grid');
+    const listButton = document.getElementById('list');
+    
+    if (gridButton) {
+        gridButton.addEventListener('click', () => toggleView('grid'));
+    }
+    
+    if (listButton) {
+        listButton.addEventListener('click', () => toggleView('list'));
+    }
+});
 
 function toggleView(view) {
     const memberContainer = document.getElementById('member-container');
+    if (!memberContainer) return;
+    
     if (view === 'grid') {
         memberContainer.classList.remove('list-view');
         memberContainer.classList.add('grid-view');
@@ -323,27 +399,30 @@ function toggleView(view) {
     }
 }
 
-
-// Fetch the members information from the JSON file
-async function fetchMembers() {
+// Fetch the Gold members information from the JSON file
+async function fetchGoldMembers() {
     try {
+        const container = document.getElementById('bussiness-spotlight');
+        if (!container) return;
+        
         const response = await fetch('data/members.json'); // Path to your JSON file
         const data = await response.json();
         const members = data.members;
 
-        // Filter only members with membershipLevel of  Gold
+        // Filter only members with membershipLevel of Gold
         const goldMembers = members.filter(member => member.membershipLevel === "Gold");
 
         // Display only Gold level members
-        displayMembers(goldMembers);
+        displayGoldMembers(goldMembers);
     } catch (error) {
         console.error('Error fetching members data:', error);
     }
 }
 
-// Function to display the members as business cards
-function displayMembers(members) {
+// Function to display the gold members as business cards
+function displayGoldMembers(members) {
     const container = document.getElementById('bussiness-spotlight');
+    if (!container) return;
 
     members.forEach(member => {
         const card = document.createElement('div');
@@ -361,5 +440,10 @@ function displayMembers(members) {
     });
 }
 
-// Call the fetchMembers function when the page loads
-fetchMembers();
+// Call the fetchGoldMembers function when the page loads
+document.addEventListener('DOMContentLoaded', function() {
+    const businessSpotlight = document.getElementById('bussiness-spotlight');
+    if (businessSpotlight) {
+        fetchGoldMembers();
+    }
+});
