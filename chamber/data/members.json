@@ -6,7 +6,7 @@
             "phoneNumber": "+2348032882047",
             "websiteUrl": "https://xpertechsolutionsltd.com",
             "imageFileName": "images/xpertech.png",
-            "membershipLevel": 3
+            "membershipLevel": "Gold"
         },
         {
             "name": "Lyon Cyber System",
@@ -14,7 +14,7 @@
             "phoneNumber": "+2349039489520",
             "websiteUrl": "https://linktr.ee/lyoncybersystem?lt_utm_source=lt_admin_share_link#387712357",
             "imageFileName": "images/lyon.png",
-            "membershipLevel": 2
+            "membershipLevel": "Silver"
         },
         {
             "name": "Odichi Solutions",
@@ -22,7 +22,7 @@
             "phoneNumber": "+2347000611099",
             "websiteUrl": "https://odichisolutions.com",
             "imageFileName": "images/odichi.png",
-            "membershipLevel": 2
+            "membershipLevel": "Silver"
         },
         {
             "name": "Ushoppen",
@@ -30,7 +30,7 @@
             "phoneNumber": "+2348054396345",
             "websiteUrl": "https://ushoppen.com",
             "imageFileName": "images/unshoppen.png",
-            "membershipLevel": 3
+            "membershipLevel": "Gold"
         },
         {
             "name": "Weevil Company",
@@ -38,7 +38,7 @@
             "phoneNumber": "+2349010100111",
             "websiteUrl": "https://weevilcompany.com",
             "imageFileName": "images/weevil.png",
-            "membershipLevel": 1
+            "membershipLevel": "Bronze"
         },
         {
             "name": "Tanta Innovative",
@@ -46,7 +46,7 @@
             "phoneNumber": "+23414536000",
             "websiteUrl": "https://tantainnovative.com",
             "imageFileName": "images/tanta.jpg",
-            "membershipLevel": 2
+            "membershipLevel": "Silver"
         },
         {
             "name": "Bitswift Tech Nigeria",
@@ -54,7 +54,7 @@
             "phoneNumber": "+2348100844637",
             "websiteUrl": "https://bitswift.ng",
             "imageFileName": "images/bitswift.png",
-            "membershipLevel": 3
+            "membershipLevel": "Gold"
         }
     ]
 }

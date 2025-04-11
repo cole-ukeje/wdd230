@@ -106,6 +106,30 @@ nav a:hover {
     transform: rotate(-45deg) translate(5px, -5px);
 }
 
+/* meet banner design */
+.meet-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #144a68;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-family: 'Segoe UI', sans-serif;
+    position: relative;
+    z-index: 1000;
+}
+
+.close-banner {
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
 /* Main Content design*/
 .hero {
     position: relative;
@@ -134,7 +158,7 @@ nav a:hover {
     z-index: 10;
 }
 
-.main-contents, .spotlight {
+.main-contents, .bussiness-spotlight {
     display: flex;
     justify-content: space-between;
     padding: 20px 0;
