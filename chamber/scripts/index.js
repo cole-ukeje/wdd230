@@ -27,6 +27,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// Highlight active navigation link
+document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll(".nav-menu a");
+    const currentUrl = window.location.href;
+
+    navLinks.forEach(link => {
+        if (link.href === currentUrl) {
+            link.classList.add("active");
+        }
+    });
+});
+
 // Weather function
 // API Key and URLs
 const apiKey = '0a7d947a4641774bc9562c026c366437';
@@ -446,4 +458,16 @@ document.addEventListener('DOMContentLoaded', function() {
     if (businessSpotlight) {
         fetchGoldMembers();
     }
+});
+
+// Highlight active navigation link for directory, discover, and join pages
+document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll(".nav-menu a");
+    const currentUrl = window.location.href;
+
+    navLinks.forEach(link => {
+        if (link.href === currentUrl) {
+            link.classList.add("active");
+        }
+    });
 });
